@@ -1,6 +1,6 @@
 import {HomePage} from '../support/pages/homePage.cy';
 import {LoginPage} from '../support/pages/loginPage.cy';
-import {OnlineShopPage} from '../support/pages/onlineShopPage.cy';
+import {ProductPage} from '../support/pages/ProductPage.cy';
 import {RegisterPage} from '../support/pages/registerPage.cy';
 import {ShopCartProductsPage} from '../support/pages/shopCartProductsPage.cy';
 
@@ -11,7 +11,7 @@ describe('Desafio3', () => {
   const registerPage = new RegisterPage();
   const loginPage = new LoginPage();
   const homePage = new HomePage();
-  const onlineShopPage = new OnlineShopPage();
+  const productPage = new ProductPage();
   const shopCartProductsPage = new ShopCartProductsPage();
 
   before('Before', () => {
@@ -26,11 +26,11 @@ it('Caso De Prueba', () => {
   loginPage.typePassword(fixtureUserData.pass);
   loginPage.clickLogIn();
   homePage.clickOnlineShop();
-  onlineShopPage.addProduct(fixtureProductData.Product1.nameProduct);
-  onlineShopPage.closeModal();
-  onlineShopPage.addProduct(fixtureProductData.Product2.nameProduct);
-  onlineShopPage.closeModal();
-  onlineShopPage.clickShoppingCartButton();
+  productPage.addProduct(fixtureProductData.Product1.nameProduct);
+  productPage.closeModal();
+  productPage.addProduct(fixtureProductData.Product2.nameProduct);
+  productPage.closeModal();
+  productPage.clickShoppingCartButton();
   shopCartProductsPage.returnProductName(fixtureProductData.Product1.nameProduct).should('have.text', `${fixtureProductData.Product1.nameProduct}`);
   shopCartProductsPage.returnProductName(fixtureProductData.Product2.nameProduct).should('have.text', `${fixtureProductData.Product2.nameProduct}`);
   shopCartProductsPage.returnProductPrice(fixtureProductData.Product1.priceProduct).should('have.text', `$${fixtureProductData.Product1.priceProduct}`);
