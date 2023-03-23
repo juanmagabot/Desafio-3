@@ -18,4 +18,8 @@ export class ShopCartProductsPage {
       return cy.get('#price');
   }
 
+  clickCheckOut(){
+    cy.get('button').contains('Go to Checkout').click();
+  }  
+
 }
