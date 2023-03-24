@@ -85,7 +85,6 @@ describe('Desafio Final', () => {
   checkOut.typeLastName(fixtureCreditData.lastName);
   checkOut.typeCreditCard(fixtureCreditData.creditNumber);
   checkOut.clickPurchase();
-  cy.wait(13000)
   recipt.returnFullName().should('have.text', `${fixtureCreditData.firstName} ${fixtureCreditData.lastName} has succesfully purchased the following items`);
   recipt.returnProductName(fixtureProductData.Product1.nameProduct).should('have.text', `${fixtureProductData.Product1.nameProduct}`);
   recipt.returnProductName(fixtureProductData.Product2.nameProduct).should('have.text', `${fixtureProductData.Product2.nameProduct}`);
