@@ -6,7 +6,7 @@ export class Recipt {
     this.totalPrice = '#totalPrice';
   }
   returnFullName(){
-    const fullName = cy.get(this.name,{timeout:13000});
+    const fullName = cy.get(this.name);
     return fullName;
 }
   returnProductName(product){

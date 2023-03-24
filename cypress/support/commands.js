@@ -23,3 +23,7 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add('waitSpinner', () => {
+  cy.get('.chakra-progress__indicator', {timeout: 12000}).should('not.exist');
+}); 
